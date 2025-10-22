@@ -1,2 +1,2 @@
-# untitled_downloader
-Downloads projects from untitled.stream
+# untitled downloader
+Downloads projects from untitled.stream.
