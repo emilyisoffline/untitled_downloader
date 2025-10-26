@@ -31,6 +31,3 @@ def tagFolder(path, trackDetails):
             data=image_data
         )])
         tags.save(v2_version=3)
-
-if __name__ == "__main__":
-    tagFolder("./within", None)

@@ -39,10 +39,10 @@ if not os.path.exists(newpath):
 
 #Download each file
 
-# for details in trackDetails:
-#     r = requests.get(details['url'])
-#     print("Downloading ", details['title'], "...")
-#     urllib.request.urlretrieve(r.json()['url'].replace("https", "http"), f"./{details['album']}/{details['title']}.mp3")
+for details in trackDetails:
+    r = requests.get(details['url'])
+    print("Downloading ", details['title'], "...")
+    urllib.request.urlretrieve(r.json()['url'].replace("https", "http"), f"./{details['album']}/{details['title']}.mp3")
     
 print("Tagging each File.")    
 tagFolder(f"./{album_title}", trackDetails)
