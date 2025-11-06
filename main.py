@@ -1,4 +1,4 @@
-import requests, json, os, validators
+import requests, json, os, validators, re
 from bs4 import BeautifulSoup
 import urllib.parse, urllib.request
 
@@ -39,10 +39,11 @@ if not os.path.exists(newpath):
 
 #Download each file
 
-for details in trackDetails:
-    r = requests.get(details['url'])
-    print("Downloading ", details['title'], "...")
-    urllib.request.urlretrieve(r.json()['url'].replace("https", "http"), f"./{details['album']}/{details['title']}.mp3")
+# for details in trackDetails:
+#     r = requests.get(details['url'])
+#     print("Downloading ", details['title'], "...")
+#     sanitized_name = re.sub(r'[<>:"/\\|?*]', '_', details['title'])
+#     urllib.request.urlretrieve(r.json()['url'].replace("https", "http"), f"./{details['album']}/{sanitized_name}.mp3")
     
 print("Tagging each File.")    
 tagFolder(f"./{album_title}", trackDetails)

@@ -17,7 +17,7 @@ def tagFolder(path, trackDetails):
     if not os.path.exists(path+"/"+albumArtName):
         urllib.request.urlretrieve(trackDetails[0]['albumArt'], path+"/"+albumArtName)
 
-    image_mime_type = mimetypes.guess_file_type(path+"/"+albumArtName)[0]
+    image_mime_type = mimetypes.guess_type(path+"/"+albumArtName)[0]
 
     with open(path+"/"+albumArtName, 'rb') as f:
         image_data = f.read()
