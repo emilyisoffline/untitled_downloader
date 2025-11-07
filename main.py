@@ -1,7 +1,7 @@
 from download import extractScriptJSON, getTrackDetails, downloadFile
 import validators, os, threading
 
-URL = input("project name ? : ")
+URL = input("project url ? : ")
 if not validators.url(URL):
     print("URL is NOT valid. Try again.")
     quit()
